@@ -31,4 +31,30 @@ Install ssh and git: `apt-get install ssh git`
 
 Now you can connect to the C.H.I.P with ssh instead of the usb cable.
 
-## TODO
+Fix locale warnings (`Cannot set LC_CTYPE to default locale: ...`):
+```
+apt-get install locales
+dpkg-reconfigure locales
+```
+
+
+# Install RuuviTag script
+
+Clone this repo to the C.H.I.P
+```
+git clone git@github.com:Ozzee/RuuviChip.git && cd RuuviChip
+```
+
+Run the setup script to install dependencies
+```
+./setup.sh
+```
+
+To make the `start.sh` script run at boot add this line to the `/etc/rc.local` file before the last line.
+```
+/root/RuuviChip/start.sh &
+```
+
+# Sources
+
+https://bbs.nextthing.co/t/setting-up-chip-as-a-headless-server-with-minimal-tools/1505
