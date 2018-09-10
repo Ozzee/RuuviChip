@@ -50,11 +50,30 @@ Run the setup script to install dependencies
 ./setup.sh
 ```
 
+Edit the `ruuvi_rx.py` script to include the correct InfluxDB host and update interval
+
+Test the script
+```
+python3 ruuvi_rx.py
+```
+
 To make the `start.sh` script run at boot add this line to the `/etc/rc.local` file before the last line.
 ```
 /root/RuuviChip/start.sh &
 ```
 
+Finally reboot to apply all the changes
+```
+reboot
+```
+
+
 # Sources
 
-https://bbs.nextthing.co/t/setting-up-chip-as-a-headless-server-with-minimal-tools/1505
+* https://bbs.nextthing.co/t/setting-up-chip-as-a-headless-server-with-minimal-tools/1505
+* https://github.com/ttu/ruuvitag-sensor
+
+# License
+
+Licensed under the [MIT License](LICENSE).
+
