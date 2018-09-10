@@ -13,11 +13,9 @@ def send_data(data):
   temperature = items['temperature']
   humidity = items['humidity']
   pressure = items['pressure']
-  data='ruuvi,address=Kilonportti,mac={} temperature={},humidity={},pressure={}'.format(mac, temperature, humidity, pressure)
+  data='ruuvi,mac={} temperature={},humidity={},pressure={}'.format(mac, temperature, humidity, pressure)
   r = requests.post('http://{}:8086/write'.format(host), params=params, data=data)
   print('{} {} - {}'.format(datetime.now(), r.status_code, mac))
-  #print('{}: {}'.format(mac, temperature))
-
 
 print('Starting RuuviChip')
 
