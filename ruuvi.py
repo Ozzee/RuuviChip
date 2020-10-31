@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 
 
-host = '10.0.0.20'
+host = 'localhost'
 
 params = {'db': 'temperatures'}
 
